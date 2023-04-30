@@ -2,7 +2,7 @@
 
 Program that retreives data from electronic components stores. It interactes with 4 different websites (Farnell, TME, Mouser and Digikey) using their APIs.
 
-image
+![Example photo of the program](example.png)
 
 The user should input the part number and the quantity desired. The program will retreive the prices, stock, lead time and MOQ information. The price is be display in the currency based on the api endpoint or parameters (check the configuration bellow). The stock represents the actual stock, it will fill with red colour if the amount available is lower than the desired quantity. The lead time in weeks only gets displayed if there's not enough stock. The MOQ only displays if the quantity desired is lower than the minimum order quantity (MOQ). The user can also check the component datasheet and if the store name is underlined then the user can click it and would be redirected to the component page in the respective store.
 
