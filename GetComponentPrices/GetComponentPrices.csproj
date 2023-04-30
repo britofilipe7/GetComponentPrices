@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+	  <LangVersion>9.0</LangVersion>
+	  <StartupObject>GetComponentPrices.Program</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Digikey\Models\FilterOption.cs" />
+    <Compile Remove="Digikey\Models\Parameter.cs" />
+    <Compile Remove="Digikey\Models\Value.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Digikey\dk_oauth.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Json.Net" Version="1.0.33" />
+    <PackageReference Include="JsonSubTypes" Version="2.0.1" />
+    <PackageReference Include="log4net" Version="2.0.15" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.9" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="RestSharp" Version="108.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="TME\GetPricesAndStock\" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties digikey_4dk_3oauth_1json__JsonSchema="https://github.com/ansible/schemas/raw/main/f/ansible-argument-specs.json" /></VisualStudio></ProjectExtensions>
+
+</Project>
